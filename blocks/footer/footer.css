@@ -1,7 +1,12 @@
 footer {
   padding: 2rem;
-  background-color: var(--overlay-background-color);
+  background-color: black;
   font-size: var(--body-font-size-s);
+  color: var(--background-color);
+}
+
+footer a:any-link {
+  color: var(--background-color);
 }
 
 footer .footer {
