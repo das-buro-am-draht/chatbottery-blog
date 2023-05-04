@@ -1,4 +1,9 @@
-import { getMetadata, decorateIcons } from '../../scripts/lib-franklin.js';
+import {
+  getMetadata,
+  decorateIcons,
+  loadBlock,
+  decorateBlock,
+} from '../../scripts/lib-franklin.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -141,5 +146,13 @@ export default async function decorate(block) {
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
     block.append(navWrapper);
+
+    const blocks = [...document.querySelectorAll('#nav > div > div')];
+    for (let i = 0; i < blocks.length; i += 1) {
+      // eslint-disable-next-line no-await-in-loop
+      await decorateBlock(blocks[i]);
+      // eslint-disable-next-line no-await-in-loop
+      await loadBlock(blocks[i]);
+    }
   }
 }
