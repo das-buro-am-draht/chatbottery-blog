@@ -1,0 +1,31 @@
+.posts > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 16px;
+}
+
+.posts > ul > li {
+  border: 1px solid var(--highlight-background-color);
+  background-color: var(--background-color)
+}
+
+.posts .posts-post-body {
+  margin: 16px;
+}
+
+.posts .posts-post-image {
+  line-height: 0;
+}
+
+.posts .posts-post-body > *:first-child {
+  margin-top: 0;
+}
+
+.posts > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}

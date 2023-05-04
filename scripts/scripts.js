@@ -112,6 +112,25 @@ async function loadLazy(doc) {
 }
 
 /**
+ * Returns an index of the site
+ * @param {string} indexUrl The URL of the index
+ */
+export async function getIndex(indexUrl) {
+  window.pageIndex = window.pageIndex || {};
+  if (!window.pageIndex[indexUrl]) {
+    const resp = await fetch(indexUrl);
+    if (!resp.ok) {
+      // eslint-disable-next-line no-console
+      console.error('loading index', resp);
+      return []; // do not cache in case of error
+    }
+    const json = await resp.json();
+    window.pageIndex[indexUrl] = json.data;
+  }
+  return window.pageIndex[indexUrl];
+}
+
+/**
  * Loads everything that happens a lot later,
  * without impacting the user experience.
  */
