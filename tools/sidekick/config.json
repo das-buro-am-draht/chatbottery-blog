@@ -1,0 +1,12 @@
+{
+  "owner": "Pidoco",
+  "repo": "Pidoco",
+  "plugins": [
+    {
+      "id": "gen-bot-search-data",
+      "title": "Generate Bot Index",
+      "event": "gen-bot-search-data-event"
+    }
+  ],
+  "environments": ["dev", "preview"]
+}

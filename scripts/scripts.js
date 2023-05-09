@@ -13,6 +13,35 @@ import {
   loadCSS,
 } from './lib-franklin.js';
 
+const genBotSearchData = ({ detail }) => {
+  const sidekick = detail.data;
+
+  console.log("sidekick detail", sidekick);
+  const status = sidekick.fetchStatus();
+  console.log("status", status);
+  
+  //TODO get page data
+  //TODO query ai
+  //TODO write ai rsp data to drive as excel
+}
+
+const sk = document.querySelector('helix-sidekick');
+if (sk) {
+  // sidekick already loaded
+  sk.addEventListener('custom:gen-bot-search-data-event', genBotSearchData);
+  // sk.addEventListener('custom:gen-bot-search-data-event', genBotSearchData);
+} else {
+  // wait for sidekick to be loaded
+  document.addEventListener('helix-sidekick-ready', () => {
+  document
+    .querySelector('helix-sidekick')
+    .addEventListener('custom:gen-bot-search-data-event', genBotSearchData);
+  // document
+  //   .querySelector('helix-sidekick')
+  //   .addEventListener('custom:gen-bot-search-data-event', genBotSearchData);
+  }, { once: true });
+}
+
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
 /**
