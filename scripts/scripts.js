@@ -17,8 +17,7 @@ const genBotSearchData = ({ detail }) => {
   const sidekick = detail.data;
 
   console.log("sidekick detail", sidekick);
-  const status = sidekick.fetchStatus();
-  console.log("status", status);
+  console.log("url?", window.location.href)
   
   //TODO get page data
   //TODO query ai

@@ -6,7 +6,12 @@
       "id": "gen-bot-search-data",
       "title": "Generate Bot Index",
       "event": "gen-bot-search-data-event"
+    },
+    {
+      "id": "gen-bot-search-data-url",
+      "title": "Generate Bot Index Too",
+      "url": "https://6635f5f9c44567.lhr.life/"
     }
   ],
-  "environments": ["dev", "preview"]
+  "environments": ["edit", "dev", "preview"]
 }
