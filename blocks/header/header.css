@@ -54,7 +54,7 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: white;
 }
 
 /* hamburger */
@@ -272,4 +272,8 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header .icon svg {
+  fill: white;
 }
