@@ -19,6 +19,7 @@ main .hero h1 {
   margin-left: auto;
   margin-right: auto;
   background: white; opacity: 0.75;
+  padding: 20px;
 }
 
 main .hero picture {
