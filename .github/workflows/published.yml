@@ -10,7 +10,7 @@ jobs:
       run: |
         echo "Path: ${{ github.event.client_payload.path }}"
     - name: Invoke webhook on Repository chatbottery-gpt-service
-      if: ${{ endsWith(github.event.client_payload.path, '.page') }}
+      if: ${{ !endsWith(github.event.client_payload.path, '.json') }}
       run: |
         curl -L \
           -X POST \
