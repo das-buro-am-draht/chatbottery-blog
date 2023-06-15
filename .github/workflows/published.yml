@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Log Payload information
       run: |
-        echo "Payload: ${{ github.event.client_payload }}"
+        echo "Path: ${{ github.event.client_payload.path }}"
     - name: Invoke webhook on Repository chatbottery-gpt-service
       if: ${{ endsWith(github.event.client_payload.path, '.page') }}
       run: |
