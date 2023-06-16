@@ -17,5 +17,5 @@ jobs:
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/repos/das-buro-am-draht/chatbottery-gpt-service/dispatches \
-          -d '{"event_type":"on-published","client_payload":{"status":200,"path":"${{ github.event.client_payload.path }}"}}'
+          https://api.github.com/repos/das-buro-am-draht/chatbottery-gpt-service/actions/workflows/analyse.yml/dispatches \
+          -d '{"ref":"main","inputs":{"path":"${{ github.event.client_payload.path }}"}}'
