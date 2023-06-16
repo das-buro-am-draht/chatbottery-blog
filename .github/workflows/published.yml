@@ -9,12 +9,15 @@ jobs:
     - name: Log Payload information
       run: |
         echo "Path: '${{ github.event.client_payload.path }}'"
+    - name: token
+      run: |
+        echo "${{ secrets.GH_TOKEN }}"
     - name: list workflows
       run: |
         curl -L \
           -X POST \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer ${{ secrets.GH_TEST }}" \
+          -H "Authorization: Bearer ${{ secrets.GH_TOKEN }}" \
           -H "X-GitHub-Api-Version: 2022-11-28" \
           https://api.github.com/repos/das-buro-am-draht/chatbottery-gpt-service/actions/workflows
     - name: Invoke webhook on Repository chatbottery-gpt-service
