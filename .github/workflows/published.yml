@@ -10,8 +10,8 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          for (const prop in github.event.client_payload) {
-            console.log(`Property '${prop}': ${github.event.client_payload[prop]}`);
+          for (const prop in context) {
+            console.log(`Property '${prop}': ${context[prop]}`);
           }
     - name: Invoke webhook on Repository chatbottery-gpt-service
       if: ${{ !endsWith(github.event.client_payload.path, '.json') }}
