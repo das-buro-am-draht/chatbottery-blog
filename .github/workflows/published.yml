@@ -15,7 +15,7 @@ jobs:
               if (typeof obj[prop] === 'object')
                 log(obj[prop], label + '.' + prop);
               else
-                console.log(`${label}: ${obj[prop]} (${typeof obj[prop]})`);
+                console.log(`${label}.${prop}: ${obj[prop]} (${typeof obj[prop]})`);
             }
           };
           log(context, 'context');
