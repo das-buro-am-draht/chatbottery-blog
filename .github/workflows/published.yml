@@ -9,9 +9,6 @@ jobs:
     - name: Log Payload information
       run: |
         echo "Path: '${{ github.event.client_payload.path }}'"
-    - name: token
-      run: |
-        echo "${{ secrets.GH_TOKEN }}"
     - name: list workflows
       run: |
         curl -L \
