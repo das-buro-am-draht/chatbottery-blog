@@ -78,8 +78,6 @@ h4, h5, h6 {
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
-  margin-left: 1.3em;
-  margin-right: 2em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
@@ -93,8 +91,6 @@ h6 { font-size: var(--heading-font-size-xs) }
 p, dl, ol, ul, pre, blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
 }
 
 hr {
@@ -223,22 +219,16 @@ main img {
   height: 100%;
   width: 100%;
 }
-/*
-main .section {
-  padding: 64px 16px;
-}
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
-}
-*/
 @media (min-width: 900px) {
   .section > div {
     max-width: 1200px;
     margin: auto;
   }
+}
+
+main .section {
+  padding: 32px;
 }
 
 /* section metadata */
