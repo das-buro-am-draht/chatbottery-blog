@@ -1,0 +1,19 @@
+{
+  "owner": "das-buro-am-draht",
+  "repo": "das-buro-am-draht",
+  "plugins": [
+    {
+      "id": "gen-bot-search-data",
+      "title": "Generate Bot Index Event",
+      "event": "gen-bot-search-data-event"
+    },
+    {
+      "id": "gen-bot-search-data-url",
+      "title": "Generate Bot Index Hook",
+      "url": "https://399a6bb8ebde8c.lhr.life/gptgen",
+      "passConfig": true,
+      "passReferrer": true
+    }
+  ],
+  "environments": ["edit", "dev", "preview"]
+}
