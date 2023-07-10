@@ -231,6 +231,10 @@ main .section {
   padding: 32px;
 }
 
+main .section.chatbottery-container {
+  padding: 0;
+}
+
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
