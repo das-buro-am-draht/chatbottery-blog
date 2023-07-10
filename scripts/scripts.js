@@ -176,12 +176,16 @@ async function loadPage() {
 
 loadPage();
 
+// set focus on chatbotter search input
 window.addEventListener("load", () => {
-  // give some time to load the chatbot
-  setTimeout(() => {
-    const searchInput = document.body.querySelector('.chatbot-window > div.chatbot-user-input > input');
-    if (searchInput) {
-      searchInput.focus();
-    }
-  }, 1000);
+  const chatbotteryWrapper = document.body.querySelector('.chatbottery-wrapper');
+  if (chatbotteryWrapper) {
+    // give some time to load the chatbot
+    setTimeout(() => {
+      const searchInput = chatbotteryWrapper.querySelector('.chatbot-window .chatbot-user-input > input');
+      if (searchInput) {
+        searchInput.focus();
+      }
+    }, 1500);
+  }
 });
