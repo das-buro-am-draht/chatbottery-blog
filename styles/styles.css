@@ -227,7 +227,7 @@ main img {
   }
 }
 
-main .section {
+main .section .default-content-wrapper {
   padding: 32px;
 }
 
