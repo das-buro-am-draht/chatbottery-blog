@@ -220,16 +220,20 @@ main img {
   width: 100%;
 }
 
+.section .default-content-wrapper,
+.section .posts-wrapper {
+  margin: 32px;
+}
+
 @media (min-width: 900px) {
   .section > div {
     max-width: 1200px;
     margin: auto;
   }
-}
-
-main .section .default-content-wrapper,
-main .section .posts-wrapper {
-  padding: 32px;
+  .section .default-content-wrapper,
+  .section .posts-wrapper {
+    margin: 32px auto;
+  }
 }
 
 /* section metadata */
