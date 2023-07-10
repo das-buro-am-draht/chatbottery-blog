@@ -175,3 +175,10 @@ async function loadPage() {
 }
 
 loadPage();
+
+window.addEventListener("load", () => {
+  const searchInput = document.body.querySelector('.chatbot-window > div.chatbot-user-input > input');
+  if (searchInput) {
+    searchInput.focus();
+  }
+});
