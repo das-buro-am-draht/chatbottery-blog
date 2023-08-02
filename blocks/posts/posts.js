@@ -14,10 +14,20 @@ export default async function decorate(block) {
     if (!item.date) return;
     const li = document.createElement('li');
 
-    const imageWrapper = document.createElement('div');
-    imageWrapper.className = 'posts-post-image';
-    imageWrapper.append(createOptimizedPicture(item.image, item.title, false, [{ width: '750' }]));
-    li.append(imageWrapper);
+    const mediaWrapper = document.createElement('div');
+    mediaWrapper.className = 'posts-post-media';
+    if (item.image && item.image.match(/.(mp4|webm)(\?.*)?$/) != null) {
+      const video = document.createElement('video');
+      video.src = item.image;
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+      video.playsInline = true;
+      mediaWrapper.append(video);
+    } else {
+      mediaWrapper.append(createOptimizedPicture(item.image, item.title, false, [{ width: '750' }]));
+    }
+    li.append(mediaWrapper);
 
     const bodyWrapper = document.createElement('div');
     bodyWrapper.className = 'posts-post-body';
@@ -30,11 +40,14 @@ export default async function decorate(block) {
     const description = document.createElement('p');
     description.innerHTML = item.description;
     bodyWrapper.append(description);
+    const linkWrapper = document.createElement('div');
+    linkWrapper.className = 'button-container';
     const link = document.createElement('a');
     link.href = item.path;
     link.innerHTML = 'Read more ...';
     link.className = 'button primary';
-    bodyWrapper.append(link);
+    linkWrapper.append(link);
+    bodyWrapper.append(linkWrapper);
     li.append(bodyWrapper);
 
     ul.append(li);

@@ -11,6 +11,7 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
 } from './lib-franklin.js';
 
 const genBotSearchData = ({ detail }) => {
@@ -50,8 +51,23 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+  const hero = getMetadata('hero');
+  if (h1 && hero && hero.match(/.(jpeg|jpg|gif|png)(\?.*)?$/) != null) {
+    // TODO
+  }
+  else if (h1 && hero && hero.match(/.(mp4|webm)(\?.*)?$/) != null) {
+    const video = document.createElement('video');
+    video.src = hero;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    const section = document.createElement('div');
+    section.append(buildBlock('hero', { elems: [video, h1] }));
+    main.prepend(section);
+  }
   // eslint-disable-next-line no-bitwise
-  if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
+  else if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
     const section = document.createElement('div');
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);

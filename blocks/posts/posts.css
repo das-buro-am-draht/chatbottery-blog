@@ -9,14 +9,20 @@
 
 .posts > ul > li {
   border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .posts .posts-post-body {
   margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* This makes the div take up the remaining space */
 }
 
-.posts .posts-post-image {
+.posts .posts-post-media {
   line-height: 0;
 }
 
@@ -40,7 +46,7 @@
   text-overflow: ellipsis;
 }
 
-.posts > ul > li img {
+.posts > ul > li img, .posts > ul > li video {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
