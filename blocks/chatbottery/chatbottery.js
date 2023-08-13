@@ -10,4 +10,12 @@ export default async function decorate(block) {
   script.defer = true;
   block.textContent = '';
   block.append(script);
+
+  // set focus on Chatbottery search input
+  setTimeout(() => {
+    const searchInput = block.querySelector('.chatbot-window .chatbot-user-input > input');
+    if (searchInput) {
+      searchInput.focus();
+    }
+  }, 1500);
 }
