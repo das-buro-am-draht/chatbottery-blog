@@ -1,4 +1,4 @@
-# Your Project's Title...
+# The Chatbottery Blog
 The blog page for https://chatbottery.com/ .
 
 ## Environments
